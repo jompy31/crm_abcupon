@@ -90,11 +90,11 @@ const QueueModal = ({ open, onClose, queueId }) => {
   const greetingRef = useRef();
 
   const [schedules, setSchedules] = useState([
-    { weekday: "Segunda-feira", weekdayEn: "monday", startTime: "08:00", endTime: "18:00", },
-    { weekday: "Terça-feira", weekdayEn: "tuesday", startTime: "08:00", endTime: "18:00", },
-    { weekday: "Quarta-feira", weekdayEn: "wednesday", startTime: "08:00", endTime: "18:00", },
-    { weekday: "Quinta-feira", weekdayEn: "thursday", startTime: "08:00", endTime: "18:00", },
-    { weekday: "Sexta-feira", weekdayEn: "friday", startTime: "08:00", endTime: "18:00", },
+    { weekday: "Lunes", weekdayEn: "monday", startTime: "08:00", endTime: "18:00", },
+    { weekday: "Martes", weekdayEn: "tuesday", startTime: "08:00", endTime: "18:00", },
+    { weekday: "Miércoles", weekdayEn: "wednesday", startTime: "08:00", endTime: "18:00", },
+    { weekday: "Jueves", weekdayEn: "thursday", startTime: "08:00", endTime: "18:00", },
+    { weekday: "Viernes", weekdayEn: "friday", startTime: "08:00", endTime: "18:00", },
     { weekday: "Sábado", weekdayEn: "saturday", startTime: "08:00", endTime: "12:00", },
     { weekday: "Domingo", weekdayEn: "sunday", startTime: "00:00", endTime: "00:00", },
   ]);
@@ -146,7 +146,7 @@ const QueueModal = ({ open, onClose, queueId }) => {
       } else {
         await api.post("/queue", { ...values, schedules });
       }
-      toast.success("Queue saved successfully");
+      toast.success("Cola guardada exitosamente");
       handleClose();
     } catch (err) {
       toastError(err);
@@ -154,7 +154,7 @@ const QueueModal = ({ open, onClose, queueId }) => {
   };
 
   const handleSaveSchedules = async (values) => {
-    toast.success("Clique em salvar para registar as alterações");
+    toast.success("haga clic en guardar para registrar los cambios");
     setSchedules(values);
     setTab(0);
   };
@@ -181,7 +181,7 @@ const QueueModal = ({ open, onClose, queueId }) => {
           aria-label="disabled tabs example"
         >
           <Tab label="Dados da Fila" />
-          {schedulesEnabled && <Tab label="Horários de Atendimento" />}
+          {schedulesEnabled && <Tab label="Horas de servicio" />}
         </Tabs>
         {tab === 0 && (
           <Paper>

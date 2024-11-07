@@ -202,7 +202,7 @@ export function CompanyForm(props) {
               <Grid xs={12} sm={6} md={4} item>
                 <Field
                   as={TextField}
-                  label="Nome"
+                  label="Nombre"
                   name="name"
                   variant="outlined"
                   className={classes.fullWidth}
@@ -261,14 +261,14 @@ export function CompanyForm(props) {
                     name="status"
                     margin="dense"
                   >
-                    <MenuItem value={true}>Sim</MenuItem>
-                    <MenuItem value={false}>Não</MenuItem>
+                    <MenuItem value={true}>Si</MenuItem>
+                    <MenuItem value={false}>No</MenuItem>
                   </Field>
                 </FormControl>
               </Grid>
               <Grid xs={12} sm={6} md={2} item>
                 <FormControl margin="dense" variant="outlined" fullWidth>
-                  <InputLabel htmlFor="status-selection">Campanhas</InputLabel>
+                  <InputLabel htmlFor="status-selection">Campañas</InputLabel>
                   <Field
                     as={Select}
                     id="campaigns-selection"
@@ -278,7 +278,7 @@ export function CompanyForm(props) {
                     margin="dense"
                   >
                     <MenuItem value={true}>Habilitadas</MenuItem>
-                    <MenuItem value={false}>Desabilitadas</MenuItem>
+                    <MenuItem value={false}>Desactivadas</MenuItem>
                   </Field>
                 </FormControl>
               </Grid>
@@ -286,7 +286,7 @@ export function CompanyForm(props) {
                 <FormControl variant="outlined" fullWidth>
                   <Field
                     as={TextField}
-                    label="Data de Vencimento"
+                    label="Fecha de expiración"
                     type="date"
                     name="dueDate"
                     InputLabelProps={{
@@ -301,17 +301,17 @@ export function CompanyForm(props) {
               <Grid xs={12} sm={6} md={2} item>
                 <FormControl margin="dense" variant="outlined" fullWidth>
                   <InputLabel htmlFor="recorrencia-selection">
-                    Recorrência
+                  Reaparición
                   </InputLabel>
                   <Field
                     as={Select}
-                    label="Recorrência"
+                    label="Reaparición"
                     labelId="recorrencia-selection-label"
                     id="recurrence"
                     name="recurrence"
                     margin="dense"
                   >
-                    <MenuItem value="MENSAL">Mensal</MenuItem>
+                    <MenuItem value="MENSAL">Mensual</MenuItem>
                     {/*<MenuItem value="BIMESTRAL">Bimestral</MenuItem>*/}
                     {/*<MenuItem value="TRIMESTRAL">Trimestral</MenuItem>*/}
                     {/*<MenuItem value="SEMESTRAL">Semestral</MenuItem>*/}
@@ -329,7 +329,7 @@ export function CompanyForm(props) {
                       onClick={() => onCancel()}
                       variant="contained"
                     >
-                      Limpar
+                      Limpiar
                     </ButtonWithSpinner>
                   </Grid>
                   {record.id !== undefined ? (
@@ -355,7 +355,7 @@ export function CompanyForm(props) {
                           variant="contained"
                           color="primary"
                         >
-                          + Vencimento
+                          + Vencimiento
                         </ButtonWithSpinner>
                       </Grid>
                       <Grid xs={6} md={1} item>
@@ -367,7 +367,7 @@ export function CompanyForm(props) {
                           variant="contained"
                           color="primary"
                         >
-                          Usuário
+                          Usuario
                         </ButtonWithSpinner>
                       </Grid>
                     </>
@@ -381,7 +381,7 @@ export function CompanyForm(props) {
                       variant="contained"
                       color="primary"
                     >
-                      Salvar
+                      Guardar
                     </ButtonWithSpinner>
                   </Grid>
                 </Grid>

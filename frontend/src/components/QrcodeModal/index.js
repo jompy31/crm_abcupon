@@ -54,7 +54,7 @@ const QrcodeModal = ({ open, onClose, whatsAppId }) => {
           {qrCode ? (
             <QRCode value={qrCode} size={256} />
           ) : (
-            <span>Waiting for QR Code</span>
+            <span>Esperando el código QR</span>
           )}
         </Paper>
       </DialogContent>

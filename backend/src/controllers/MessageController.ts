@@ -110,11 +110,11 @@ export const send = async (req: Request, res: Response): Promise<Response> => {
     const whatsapp = await Whatsapp.findByPk(whatsappId);
 
     if (!whatsapp) {
-      throw new Error("Não foi possível realizar a operação");
+      throw new Error("La operación no se pudo realizar.");
     }
 
     if (messageData.number === undefined) {
-      throw new Error("O número é obrigatório");
+      throw new Error("El numero es obligatorio");
     }
 
     const numberToTest = messageData.number;
@@ -179,11 +179,11 @@ export const send = async (req: Request, res: Response): Promise<Response> => {
     
     SetTicketMessagesAsRead(ticket);
 
-    return res.send({ mensagem: "Mensagem enviada" });
+    return res.send({ mensagem: "Mensaje enviado" });
   } catch (err: any) {
     if (Object.keys(err).length === 0) {
       throw new AppError(
-        "Não foi possível enviar a mensagem, tente novamente em alguns instantes"
+        "No se puede enviar el mensaje, inténtelo nuevamente en unos momentos."
       );
     } else {
       throw new AppError(err.message);

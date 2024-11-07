@@ -184,7 +184,7 @@ const Invoices = () => {
 
       ></SubscriptionModal>
       <MainHeader>
-        <Title>Faturas</Title>
+        <Title>Facturas</Title>
       </MainHeader>
       <Paper
         className={classes.mainPaper}
@@ -195,11 +195,11 @@ const Invoices = () => {
           <TableHead>
             <TableRow>
               <TableCell align="center">Id</TableCell>
-              <TableCell align="center">Detalhes</TableCell>
+              <TableCell align="center">Detalles</TableCell>
               <TableCell align="center">Valor</TableCell>
               <TableCell align="center">Data Venc.</TableCell>
               <TableCell align="center">Status</TableCell>
-              <TableCell align="center">Ação</TableCell>
+              <TableCell align="center">Acción</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>

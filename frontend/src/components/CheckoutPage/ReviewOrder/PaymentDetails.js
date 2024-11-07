@@ -16,12 +16,12 @@ function PaymentDetails(props) {
   return (
     <Grid item container direction="column" xs={12} sm={6}>
       <Typography variant="h6" gutterBottom className={classes.title}>
-        Informação de pagamento
+      Información de pago
       </Typography>
       <Grid container>
         <React.Fragment>
           <Grid item xs={6}>
-            <Typography gutterBottom>Email:</Typography>
+            <Typography gutterBottom>Correo electrónico:</Typography>
           </Grid>
           <Grid item xs={6}>
             <Typography gutterBottom>{user.company.email}</Typography>
@@ -29,7 +29,7 @@ function PaymentDetails(props) {
         </React.Fragment>
         <React.Fragment>
           <Grid item xs={6}>
-            <Typography gutterBottom>Nome:</Typography>
+            <Typography gutterBottom>Nombre:</Typography>
           </Grid>
           <Grid item xs={6}>
             <Typography gutterBottom>{firstName}</Typography>
@@ -37,7 +37,7 @@ function PaymentDetails(props) {
         </React.Fragment>
         <React.Fragment>
           <Grid item xs={6}>
-            <Typography gutterBottom>Endereço:</Typography>
+            <Typography gutterBottom>Dirección:</Typography>
           </Grid>
           <Grid item xs={6}>
             <Typography gutterBottom>
@@ -50,7 +50,7 @@ function PaymentDetails(props) {
             <Typography gutterBottom>Total:</Typography>
           </Grid>
           <Grid item xs={6}>
-            <Typography gutterBottom>R${price.toLocaleString('pt-br', {minimumFractionDigits: 2})}</Typography>
+            <Typography gutterBottom>₡{price.toLocaleString('pt-br', {minimumFractionDigits: 2})}</Typography>
           </Grid>
         </React.Fragment>
       </Grid>

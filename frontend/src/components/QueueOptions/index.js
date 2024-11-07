@@ -234,7 +234,7 @@ export function QueueOptionStepper({ queueId, options, updateOptions }) {
                 variant="outlined"
                 className={classes.addButton}
               >
-                Adicionar
+                Agregar
               </Button>
             </>
           )}
@@ -327,7 +327,7 @@ export function QueueOptions({ queueId }) {
     <div className={classes.root}>
       <br />
       <Typography>
-        Opções
+      Opciones
         <Button
           color="primary"
           size="small"
@@ -336,7 +336,7 @@ export function QueueOptions({ queueId }) {
           style={{ marginLeft: 10 }}
           variant="outlined"
         >
-          Adicionar
+          Agregar
         </Button>
       </Typography>
       {renderStepper()}

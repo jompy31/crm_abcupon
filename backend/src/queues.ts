@@ -178,13 +178,13 @@ async function handleVerifyQueue(job) {
                   //   ticket,
                   // });
 
-                  logger.info(`Atendimento Perdido: ${ticket.id} - Empresa: ${companyId}`);
+                  logger.info(`Servicio perdido: ${ticket.id} - Empresa: ${companyId}`);
                 });
               } else {
-                logger.info(`Nenhum atendimento perdido encontrado - Empresa: ${companyId}`);
+                logger.info(`No se encontró ningún servicio perdido - Empresa: ${companyId}`);
               }
             } else {
-              logger.info(`Condição não respeitada - Empresa: ${companyId}`);
+              logger.info(`Condición no respetada - Empresa: ${companyId}`);
             }
           }
         }
@@ -220,7 +220,7 @@ async function handleVerifySchedules(job) {
           { schedule },
           { delay: 40000 }
         );
-        logger.info(`Disparo agendado para: ${schedule.contact.name}`);
+        logger.info(`Envió previsto para: ${schedule.contact.name}`);
       });
     }
   } catch (e: any) {
@@ -240,7 +240,7 @@ async function handleSendScheduledMessage(job) {
     scheduleRecord = await Schedule.findByPk(schedule.id);
   } catch (e) {
     Sentry.captureException(e);
-    logger.info(`Erro ao tentar consultar agendamento: ${schedule.id}`);
+    logger.info(`Error al intentar consultar el horario: ${schedule.id}`);
   }
 
   try {
@@ -262,7 +262,7 @@ async function handleSendScheduledMessage(job) {
       status: "ENVIADA"
     });
 
-    logger.info(`Mensagem agendada enviada para: ${schedule.contact.name}`);
+    logger.info(`Mensaje programado enviado a: ${schedule.contact.name}`);
     sendScheduledMessages.clean(15000, "completed");
   } catch (e: any) {
     Sentry.captureException(e);
@@ -292,7 +292,7 @@ async function handleVerifyCampaigns(job) {
       const scheduledAt = moment(campaign.scheduledAt);
       const delay = scheduledAt.diff(now, "milliseconds");
       logger.info(
-        `Campanha enviada para a fila de processamento: Campanha=${campaign.id}, Delay Inicial=${delay}`
+        `Campaña enviada a la cola de procesamiento: Campanha=${campaign.id}, Delay Inicial=${delay}`
       );
       campaignQueue.add(
         "ProcessCampaign",
@@ -562,7 +562,7 @@ async function handleProcessCampaign(job) {
             { removeOnComplete: true }
           );
           queuePromises.push(queuePromise);
-          logger.info(`Registro enviado pra fila de disparo: Campanha=${campaign.id};Contato=${contacts[i].name};delay=${delay}`);
+          logger.info(`Registro enviado a la cola de activación: Campaña=${campaign.id};Contacto=${contacts[i].name};delay=${delay}`);
         }
         await Promise.all(queuePromises);
         await campaign.update({ status: "EM_ANDAMENTO" });
@@ -676,7 +676,7 @@ async function handleDispatchCampaign(job) {
     }
 
     logger.info(
-      `Disparo de campanha solicitado: Campanha=${campaignId};Registro=${campaignShippingId}`
+      `Activador de campaña solicitado: Campaña=${campaignId};Registro=${campaignShippingId}`
     );
 
     const campaignShipping = await CampaignShipping.findByPk(
@@ -741,7 +741,7 @@ async function handleDispatchCampaign(job) {
     });
 
     logger.info(
-      `Campanha enviada para: Campanha=${campaignId};Contato=${campaignShipping.contact.name}`
+      `Campaña enviada a: Campaña=${campaignId};Contacto=${campaignShipping.contact.name}`
     );
   } catch (err: any) {
     Sentry.captureException(err);
@@ -768,7 +768,7 @@ async function handleLoginStatus(job) {
 
 
 async function handleInvoiceCreate() {
-  logger.info("Iniciando geração de boletos");
+  logger.info("Iniciar generación de facturas");
   const job = new CronJob('*/5 * * * * *', async () => {
 
 
@@ -846,7 +846,7 @@ async function handleInvoiceCreate() {
 handleInvoiceCreate()
 
 export async function startQueueProcess() {
-  logger.info("Iniciando processamento de filas");
+  logger.info("Iniciando procesamiento de cola");
 
   messageQueue.process("SendMessage", handleSendMessage);
 

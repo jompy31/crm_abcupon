@@ -3,71 +3,71 @@ export default {
   formField: {
     firstName: {
       name: 'firstName',
-      label: 'Nome completo*',
-      requiredErrorMsg: 'O nome completo é obrigatório'
+      label: 'Nombre completo*',
+      requiredErrorMsg: 'El nombre completo es obligatorio'
     },
     lastName: {
       name: 'lastName',
-      label: 'Last name*',
-      requiredErrorMsg: 'Last name is required'
+      label: 'Apellido*',
+      requiredErrorMsg: 'El apellido es obligatorio'
     },
     address1: {
       name: 'address2',
-      label: 'Endereço*',
-      requiredErrorMsg: 'O Endereço é obrigatório'
+      label: 'Dirección*',
+      requiredErrorMsg: 'La dirección es obligatoria.'
     },
 
     city: {
       name: 'city',
-      label: 'Cidade*',
-      requiredErrorMsg: 'Cidade é obrigatória'
+      label: 'Ciudad*',
+      requiredErrorMsg: 'La ciudad es obligatoria'
     },
     state: {
       name: 'state',
-      label: 'Estado*',
-      requiredErrorMsg: 'Cidade é obrigatória'
+      label: 'Canton*',
+      requiredErrorMsg: 'El canton es obligatorio'
     },
     zipcode: {
       name: 'zipcode',
-      label: 'CEP*',
-      requiredErrorMsg: 'CEP é obrigatório',
-      invalidErrorMsg: 'Formato de CEP inválido'
+      label: 'zipcode*',
+      requiredErrorMsg: 'zipcode es obligatorio',
+      invalidErrorMsg: 'Formato de zipcode inválido'
     },
     country: {
       name: 'country',
       label: 'País*',
-      requiredErrorMsg: 'País é obrigatório'
+      requiredErrorMsg: 'País es obligatorio'
     },
     useAddressForPaymentDetails: {
       name: 'useAddressForPaymentDetails',
-      label: 'Use this address for payment details'
+      label: 'Utilice esta dirección para los detalles del pago'
     },
     invoiceId: {
       name: 'invoiceId',
-      label: 'Use this invoiceId'
+      label: 'Utilice este ID de factura'
     },
     nameOnCard: {
       name: 'nameOnCard',
-      label: 'Name on card*',
-      requiredErrorMsg: 'Name on card is required'
+      label: 'Nombre en la tarjeta*',
+      requiredErrorMsg: 'Se requiere el nombre en la tarjeta'
     },
     cardNumber: {
       name: 'cardNumber',
-      label: 'Card number*',
-      requiredErrorMsg: 'Card number is required',
-      invalidErrorMsg: 'Card number is not valid (e.g. 4111111111111)'
+      label: 'Número de tarjeta*',
+      requiredErrorMsg: 'Se requiere el número de tarjeta',
+      invalidErrorMsg: 'El número de tarjeta no es válido (e.g. 4111111111111)'
     },
     expiryDate: {
       name: 'expiryDate',
-      label: 'Expiry date*',
-      requiredErrorMsg: 'Expiry date is required',
-      invalidErrorMsg: 'Expiry date is not valid'
+      label: 'Fecha de caducidad*',
+      requiredErrorMsg: 'Se requiere fecha de caducidad',
+      invalidErrorMsg: 'La fecha de caducidad no es válida'
     },
     cvv: {
       name: 'cvv',
       label: 'CVV*',
-      requiredErrorMsg: 'CVV is required',
-      invalidErrorMsg: 'CVV is invalid (e.g. 357)'
+      requiredErrorMsg: 'Se requiere CVV',
+      invalidErrorMsg: 'CVV no es válido (e.g. 357)'
     }
   }
 };

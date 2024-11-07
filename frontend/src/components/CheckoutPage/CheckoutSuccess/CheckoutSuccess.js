@@ -23,7 +23,7 @@ function CheckoutSuccess(props) {
     socket.on(`company-${companyId}-payment`, (data) => {
 
       if (data.action === "CONCLUIDA") {
-        toast.success(`Sua licença foi renovada até ${dateToClient(data.company.dueDate)}!`);
+        toast.success(`Su licencia ha sido renovada hasta ${dateToClient(data.company.dueDate)}!`);
         setTimeout(() => {
           history.push("/");
         }, 4000);
@@ -42,7 +42,7 @@ function CheckoutSuccess(props) {
     <React.Fragment>
       <Total>
         <span>TOTAL</span>
-        <strong>R${pix.valor.original.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</strong>
+        <strong>₡{pix.valor.original.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</strong>
       </Total>
       <SuccessContent>
         <QRCode value={pixString} />
@@ -62,8 +62,8 @@ function CheckoutSuccess(props) {
           </button>
         </CopyToClipboard>
         <span>
-          Para finalizar, basta realizar o pagamento escaneando ou colando o
-          código Pix acima :)
+        Para finalizar simplemente realiza el pago escaneando o pegando el
+        Código Pix arriba :)
         </span>
       </SuccessContent>
     </React.Fragment>

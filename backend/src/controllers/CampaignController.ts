@@ -202,7 +202,7 @@ export const cancel = async (
 
   await CancelService(+id);
 
-  return res.status(204).json({ message: "Cancelamento realizado" });
+  return res.status(204).json({ message: "Cancelación realizada" });
 };
 
 export const restart = async (
@@ -213,7 +213,7 @@ export const restart = async (
 
   await RestartService(+id);
 
-  return res.status(204).json({ message: "Reinício dos disparos" });
+  return res.status(204).json({ message: "Reanudación del rodaje" });
 };
 
 export const remove = async (
@@ -231,7 +231,7 @@ export const remove = async (
     id
   });
 
-  return res.status(200).json({ message: "Campaign deleted" });
+  return res.status(200).json({ message: "Campaña eliminada" });
 };
 
 export const findList = async (
@@ -257,7 +257,7 @@ export const mediaUpload = async (
     campaign.mediaPath = file.filename;
     campaign.mediaName = file.originalname;
     await campaign.save();
-    return res.send({ mensagem: "Mensagem enviada" });
+    return res.send({ mensagem: "Mensaje enviado" });
   } catch (err: any) {
     throw new AppError(err.message);
   }
@@ -280,7 +280,7 @@ export const deleteMedia = async (
     campaign.mediaPath = null;
     campaign.mediaName = null;
     await campaign.save();
-    return res.send({ mensagem: "Arquivo excluído" });
+    return res.send({ mensagem: "archivo eliminado" });
   } catch (err: any) {
     throw new AppError(err.message);
   }

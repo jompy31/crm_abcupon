@@ -299,12 +299,12 @@ const useStyles = makeStyles((theme) => ({
 	
 	    const handleSendMessage = async (id) => {
         
-        const msg = `{{ms}} *{{name}}*, meu nome é *${user?.name}* e agora vou prosseguir com seu atendimento!`;
+        const msg = `{{ms}} *{{name}}*, mi nombre es*${user?.name}* y ahora seguiré con tu servicio!`;
         const message = {
             read: 1,
             fromMe: true,
             mediaUrl: "",
-            body: `*Mensagem Automática:*\n${msg.trim()}`,
+            body: `*Mensaje automático:*\n${msg.trim()}`,
         };
         try {
             await api.post(`/messages/${id}`, message);
@@ -443,7 +443,7 @@ const useStyles = makeStyles((theme) => ({
                 component="span"
                 variant="body2"
                 color="textSecondary"
-              > {ticket.lastMessage.includes('data:image/png;base64') ? <MarkdownWrapper> Localização</MarkdownWrapper> : <MarkdownWrapper>{ticket.lastMessage}</MarkdownWrapper>}
+              > {ticket.lastMessage.includes('data:image/png;base64') ? <MarkdownWrapper> Ubicación</MarkdownWrapper> : <MarkdownWrapper>{ticket.lastMessage}</MarkdownWrapper>}
                 <span className={classes.secondaryContentSecond} >
                   {ticket?.whatsapp?.name ? <Badge className={classes.connectionTag}>{ticket?.whatsapp?.name?.toUpperCase()}</Badge> : <br></br>}
                   {ticketUser ? <Badge style={{ backgroundColor: "#000000" }} className={classes.connectionTag}>{ticketUser}</Badge> : <br></br>}

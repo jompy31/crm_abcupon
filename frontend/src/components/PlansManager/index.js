@@ -99,7 +99,7 @@ export function PlanManagerForm(props) {
                         <Grid xs={12} sm={6} md={4} item>
                             <Field
                                 as={TextField}
-                                label="Nome"
+                                label="Nombre"
                                 name="name"
                                 variant="outlined"
                                 className={classes.fullWidth}
@@ -122,7 +122,7 @@ export function PlanManagerForm(props) {
                         <Grid xs={12} sm={6} md={4} item>
                             <Field
                                 as={TextField}
-                                label="Usuários"
+                                label="Usuarios"
                                 name="users"
                                 variant="outlined"
                                 className={classes.fullWidth}
@@ -133,7 +133,7 @@ export function PlanManagerForm(props) {
                         <Grid xs={12} sm={6} md={4} item>
                             <Field
                                 as={TextField}
-                                label="Conexões"
+                                label="Conexiones"
                                 name="connections"
                                 variant="outlined"
                                 className={classes.fullWidth}
@@ -168,7 +168,7 @@ export function PlanManagerForm(props) {
                                 ) : null}
                                 <Grid xs={4} md={1} item>
                                     <ButtonWithSpinner className={classes.fullWidth} loading={loading} type="submit" variant="contained" color="primary">
-                                        Salvar
+                                       Guardar
                                     </ButtonWithSpinner>
                                 </Grid>
                             </Grid>

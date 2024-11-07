@@ -59,7 +59,7 @@ function _renderStepContent(step, setFieldValue, setActiveStep, values ) {
     case 2:
       return <ReviewOrder />;
     default:
-      return <div>Not Found</div>;
+      return <div>No encontrado</div>;
   }
 }
 
@@ -90,7 +90,7 @@ function _renderStepContent(step, setFieldValue, setActiveStep, values ) {
       setDatePayment(data)
       actions.setSubmitting(false);
       setActiveStep(activeStep + 1);
-      toast.success("Assinatura realizada com sucesso!, aguardando a realização do pagamento");
+      toast.success("¡Suscripción completada exitosamente!, pendiente de pago");
     } catch (err) {
       toastError(err);
     }
@@ -113,7 +113,7 @@ function _renderStepContent(step, setFieldValue, setActiveStep, values ) {
   return (
     <React.Fragment>
       <Typography component="h1" variant="h4" align="center">
-        Falta pouco!
+        Falta poco!
       </Typography>
       <Stepper activeStep={activeStep} className={classes.stepper}>
         {steps.map((label) => (
@@ -141,7 +141,7 @@ function _renderStepContent(step, setFieldValue, setActiveStep, values ) {
                 <div className={classes.buttons}>
                   {activeStep !== 1 && (
                     <Button onClick={_handleBack} className={classes.button}>
-                      VOLTAR
+                     VOLVER
                     </Button>
                   )}
                   <div className={classes.wrapper}>

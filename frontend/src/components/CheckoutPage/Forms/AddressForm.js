@@ -12,6 +12,10 @@ const countries = [
     value: "usa",
     label: "United States",
   },
+  {
+    value: "CR",
+    label: "Costa Rica",
+  },
 ];
 
 export default function AddressForm(props) {
@@ -48,7 +52,7 @@ export default function AddressForm(props) {
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
-        Vamos precisar de algumas informações
+      Necesitaremos alguna información
       </Typography>
       <Grid container spacing={3}>
 

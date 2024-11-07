@@ -77,7 +77,7 @@ const FormCompany = () => {
 			return <>
 				<Grid item>
 					<FormControl fullWidth variant="outlined">
-						<InputLabel>Plano</InputLabel>
+						<InputLabel>Departamento</InputLabel>
 						<Select 
 							required
 							id="planId"

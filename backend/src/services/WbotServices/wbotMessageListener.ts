@@ -238,7 +238,7 @@ export const sendMessageImage = async (
     sentMessage = await wbot.sendMessage(
       `${contact.number}@${ticket.isGroup ? "g.us" : "s.whatsapp.net"}`,
       {
-        text: formatBody('Não consegui enviar o PDF, tente novamente!', contact)
+        text: formatBody('No pude enviar el PDF, ¡inténtalo de nuevo!', contact)
       }
     );
   }
@@ -266,7 +266,7 @@ export const sendMessageLink = async (
   } catch (error) {
     sentMessage = await wbot.sendMessage(
       `${contact.number}@${ticket.isGroup ? "g.us" : "s.whatsapp.net"}`, {
-      text: formatBody('Não consegui enviar o PDF, tente novamente!', contact)
+      text: formatBody('No pude enviar el PDF, ¡inténtalo de nuevo!', contact)
     }
     );
   }
@@ -350,11 +350,11 @@ export const getBodyMessage = (msg: proto.IWebMessageInfo): string | null => {
     const objKey = Object.keys(types).find(key => key === type);
 
     if (!objKey) {
-      logger.warn(`#### Nao achou o type 152: ${type}
+      logger.warn(`#### No encontré el tipo 152: ${type}
 ${JSON.stringify(msg)}`);
-      Sentry.setExtra("Mensagem", { BodyMsg: msg.message, msg, type });
+      Sentry.setExtra("Mensaje", { BodyMsg: msg.message, msg, type });
       Sentry.captureException(
-        new Error("Novo Tipo de Mensagem em getTypeMessage")
+        new Error("Nuevo tipo de mensaje en getTypeMessage")
       );
     }
     return types[type];
@@ -439,7 +439,7 @@ const downloadMedia = async (msg: proto.IWebMessageInfo) => {
   } catch (err) {
 
 
-    console.error('Erro ao baixar mídia:', err);
+    console.error('Error al descargar medios:', err);
 
     // Trate o erro de acordo com as suas necessidades
   }
@@ -647,10 +647,10 @@ const handleOpenAi = async (
     limit: prompt.maxMessages
   });
 
-  const promptSystem = `Nas respostas utilize o nome ${sanitizeName(
+  const promptSystem = `En tus respuestas utiliza el nombre. ${sanitizeName(
     contact.name || "Amigo(a)"
-  )} para identificar o cliente.\nSua resposta deve usar no máximo ${prompt.maxTokens
-    } tokens e cuide para não truncar o final.\nSempre que possível, mencione o nome dele para ser mais personalizado o atendimento e mais educado. Quando a resposta requer uma transferência para o setor de atendimento, comece sua resposta com 'Ação: Transferir para o setor de atendimento'.\n
+  )} para identificar al cliente.\nSu respuesta debe utilizar como máximo ${prompt.maxTokens
+    } tokens y tenga cuidado de no truncar el final.\nSiempre que sea posible, mencione su nombre para que el servicio sea más personalizado y educado. Cuando la respuesta requiera una transferencia a la oficina principal, comience su respuesta con 'Acción: Transferencia a la oficina principal'.\n
   ${prompt.prompt}\n`;
 
   let messagesOpenAi: ChatCompletionRequestMessage[] = [];
@@ -683,10 +683,10 @@ const handleOpenAi = async (
 
     let response = chat.data.choices[0].message?.content;
 
-    if (response?.includes("Ação: Transferir para o setor de atendimento")) {
+    if (response?.includes("Acción: Transferencia al sector servicios")) {
       await transferQueue(prompt.queueId, ticket, contact);
       response = response
-        .replace("Ação: Transferir para o setor de atendimento", "")
+        .replace("Acción: Transferencia al sector servicios", "")
         .trim();
     }
 
@@ -715,7 +715,7 @@ const handleOpenAi = async (
           deleteFileSync(`${publicFolder}/${fileNameWithOutExtension}.mp3`);
           deleteFileSync(`${publicFolder}/${fileNameWithOutExtension}.wav`);
         } catch (error) {
-          console.log(`Erro para responder com audio: ${error}`);
+          console.log(`Error para responder comn audio: ${error}`);
         }
       });
     }
@@ -749,10 +749,10 @@ const handleOpenAi = async (
     });
     let response = chat.data.choices[0].message?.content;
 
-    if (response?.includes("Ação: Transferir para o setor de atendimento")) {
+    if (response?.includes("Acción: Transferencia al sector servicios")) {
       await transferQueue(prompt.queueId, ticket, contact);
       response = response
-        .replace("Ação: Transferir para o setor de atendimento", "")
+        .replace("Acción: Transferencia al sector servicios", "")
         .trim();
     }
     if (prompt.voice === "texto") {
@@ -780,7 +780,7 @@ const handleOpenAi = async (
           deleteFileSync(`${publicFolder}/${fileNameWithOutExtension}.mp3`);
           deleteFileSync(`${publicFolder}/${fileNameWithOutExtension}.wav`);
         } catch (error) {
-          console.log(`Erro para responder com audio: ${error}`);
+          console.log(`Error para responder con audio: ${error}`);
         }
       });
     }
@@ -973,10 +973,10 @@ const isValidMsg = (msg: proto.IWebMessageInfo): boolean => {
       msgType === "viewOnceMessage";
 
     if (!ifType) {
-      logger.warn(`#### Nao achou o type em isValidMsg: ${msgType}
+      logger.warn(`#### No encontré el tipo en isValidMsg: ${msgType}
 ${JSON.stringify(msg?.message)}`);
       Sentry.setExtra("Mensagem", { BodyMsg: msg.message, msg, msgType });
-      Sentry.captureException(new Error("Novo Tipo de Mensagem em isValidMsg"));
+      Sentry.captureException(new Error("Nuevo tipo de mensaje en isValidMsg"));
     }
 
     return !!ifType;
@@ -1050,7 +1050,7 @@ const verifyQueue = async (
 
     const listMessage = {
       text: formatBody(`\u200e${greetingMessage}`, contact),
-      buttonText: "Escolha uma opção",
+      buttonText: "Elige una opción",
       sections
     };
 
@@ -1478,7 +1478,7 @@ const handleChartbot = async (ticket: Ticket, msg: WAMessage, wbot: Session, don
 
         const listMessage = {
           text: formatBody(`\u200e${currentOption.message}`, ticket.contact),
-          buttonText: "Escolha uma opção",
+          buttonText: "Elige una opción",
           sections
         };
 

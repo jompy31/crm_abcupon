@@ -416,7 +416,7 @@ const CampaignModal = ({
                         }
                         disabled={!campaignEditable}
                       >
-                        <MenuItem value={false}>Desabilitada</MenuItem>
+                        <MenuItem value={false}>Desactivada</MenuItem>
                         <MenuItem value={true}>Habilitada</MenuItem>
                       </Field>
                     </FormControl>
@@ -445,7 +445,7 @@ const CampaignModal = ({
                         }
                         disabled={!campaignEditable}
                       >
-                        <MenuItem value="">Nenhuma</MenuItem>
+                        <MenuItem value="">Ninguno</MenuItem>
                         {contactLists &&
                           contactLists.map((contactList) => (
                             <MenuItem
@@ -478,7 +478,7 @@ const CampaignModal = ({
                         error={touched.tagListId && Boolean(errors.tagListId)}
                         disabled={!campaignEditable}
                       >
-                        <MenuItem value="">Nenhuma</MenuItem>
+                        <MenuItem value="">Ninguno</MenuItem>
                         {Array.isArray(tagLists) &&
                           tagLists.map((tagList) => (
                             <MenuItem key={tagList.id} value={tagList.id}>
@@ -508,7 +508,7 @@ const CampaignModal = ({
                         error={touched.whatsappId && Boolean(errors.whatsappId)}
                         disabled={!campaignEditable}
                       >
-                        <MenuItem value="">Nenhuma</MenuItem>
+                        <MenuItem value="">Ninguno</MenuItem>
                         {whatsapps &&
                           whatsapps.map((whatsapp) => (
                             <MenuItem key={whatsapp.id} value={whatsapp.id}>

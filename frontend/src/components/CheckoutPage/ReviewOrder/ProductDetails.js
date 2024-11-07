@@ -23,7 +23,7 @@ function ProductDetails() {
       <ListItem className={classes.listItem}>
         <ListItemText primary="Total" />
         <Typography variant="subtitle1" className={classes.total}>
-          $34.06
+        ₡34.06
         </Typography>
       </ListItem>
     </List>
